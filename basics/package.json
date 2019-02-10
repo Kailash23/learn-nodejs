@@ -1,0 +1,26 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "common.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    
+    "dev": "nodemon common",
+    "start": "node common",
+    "pretest": "echo starting tests!!!",
+    "test": "node test",
+    "posttest": "echo thank you for testing",
+    "test-watch": "nodemon test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

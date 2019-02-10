@@ -10,7 +10,7 @@
 // module.exports = true
 
 // 3
-exports.a = true;
+// exports.a = true;
 
 // if (command === "add") {
 //     console.log(a + b);

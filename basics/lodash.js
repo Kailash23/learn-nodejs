@@ -22,6 +22,10 @@ console.log(_.snakeCase("someValue"));
 // write code extremely quickly.
 // which module to use for which situation.
 
-// npm install --save-dev mocha   for unit testing
+// npm install --save-dev mocha   for unit testing  (install locally)
 // we don't want to install in production deployment.
 // devDependencies is used for that - used just for local development
+// npm install -> will install both dependencies both devDependencies and dependencies.
+// npm install --production  -> in dependencies (Production build and deployment are lighter)
+// like mocha -> task runner & test runner
+
