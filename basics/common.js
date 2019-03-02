@@ -1,5 +1,5 @@
 // Import files using CommonJS module
-var math = require("./math");   
+var math = require("./math");
 
 // console.log(math);
 
@@ -26,7 +26,6 @@ var math = require("./math");
 // var value = math[command](a,b);
 
 // console.log(value);
-
 
 // node app multiply 2 3
 

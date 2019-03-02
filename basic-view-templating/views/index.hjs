@@ -7,7 +7,7 @@
 <body>
     {{> header}}
     {{#showTweets}}
-        {{> tweets}}
+    {{> tweets}}
     {{/showTweets}}
     <script src="/js/main.js"></script>
 </body>

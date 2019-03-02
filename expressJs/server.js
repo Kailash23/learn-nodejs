@@ -13,25 +13,24 @@ const app = express();
 //     res.send(profile);
 // })
 
-
 // 2
-app.use((req, res, next) => {
-        
-        // if(req.method === 'GET' && req.url === '/') {
-        //     res.send("Hi");
-        // } else {
-        //     next();
-        // }
+app
+  .use((req, res, next) => {
+    // if(req.method === 'GET' && req.url === '/') {
+    //     res.send("Hi");
+    // } else {
+    //     next();
+    // }
 
-        var profile = {name : "Will"};
-        req.profile = profile;
-        next();
-    })
-    .get("/", (req, res) => {
-        res.send("Hello World");
-    })
-    .get("/profile", (req, res) => {
-        res.send(req.profile);
-    })
+    var profile = { name: "Will" };
+    req.profile = profile;
+    next();
+  })
+  .get("/", (req, res) => {
+    res.send("Hello World");
+  })
+  .get("/profile", (req, res) => {
+    res.send(req.profile);
+  });
 
 app.listen(3000);

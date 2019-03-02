@@ -1,11 +1,10 @@
 var _ = require("lodash");
 var axios = require("axios");
 
-
 // Get request using axios
-axios.get("http://rest.learncode.academy/api/myuser/friends").then ((res) => {
-    var jake = _.find(res.data, {name: "Jake"});        // (from where, what to search) from json
-    console.log(jake);
+axios.get("http://rest.learncode.academy/api/myuser/friends").then(res => {
+  var jake = _.find(res.data, { name: "Jake" }); // (from where, what to search) from json
+  console.log(jake);
 });
 
 console.log(_.snakeCase("someValue"));
@@ -28,4 +27,3 @@ console.log(_.snakeCase("someValue"));
 // npm install -> will install both dependencies both devDependencies and dependencies.
 // npm install --production  -> in dependencies (Production build and deployment are lighter)
 // like mocha -> task runner & test runner
-
