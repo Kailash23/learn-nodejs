@@ -1,15 +1,16 @@
-const knex = require("./db");
+const bcrypt = require("bcrypt-nodejs");
+const db = require("./db");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
-passport.use(new LocalStrategy(authentication));
+passport.use(new LocalStrategy(authenticate));
 
-function authentication(email, password, done) {
+function authenticate(email, password, done) {
   db("users")
     .where("email", email)
     .first()
     .then(user => {
-      if (!user || user.password !== password) {
+      if (!user || !bcrypt.compareSync(password, user.password)) {
         return done(null, false, {
           message: "Invalid email and password combination!"
         });
@@ -36,6 +37,7 @@ function authentication(email, password, done) {
 // whole user into cookie we just want to store enough info to identify user and
 // refetch that user.
 
+// Lets add user id to session
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
@@ -46,6 +48,9 @@ passport.serializeUser(function(user, done) {
 // This gonna make next request, deserializeUser gets called pulls
 // the id in the cookie and populate the full user object
 
+// Then every page request is made we are going to use forward slash
+// for that, and passport will deserialize the user and fetch the user
+// by id from database. And then after getting user populate the full user.
 passport.deserializeUser(function(id, done) {
   db("users")
     .where("id", id)
