@@ -3,3 +3,6 @@
 
 require("babel-register");
 require("./src/server");
+
+
+// run - node main.js

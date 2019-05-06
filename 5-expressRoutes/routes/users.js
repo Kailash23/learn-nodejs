@@ -8,8 +8,8 @@ const router = express.Router();
 //         res.send("ok!");
 //     })
 //     .get("/users", (req, res) => {
-//         res.send("users!")
-//     })
+//         res.send("users!");
+//     });
 
 router
     .get("/", (req, res, next) => {
@@ -18,6 +18,6 @@ router
     })
     .get("/", (req, res) => {
         res.send(req.body);
-    })
+    });
 
 module.exports = router;

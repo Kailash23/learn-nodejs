@@ -11,6 +11,8 @@ var server = http.createServer(function(request, response) {
   var method = request.method;
   var url = request.url;
 
+  console.log(method);
+
   if (url === "/") {
     handlers.homepage(request, response);
   } else if (url === "/profile") {
